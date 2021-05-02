@@ -4,7 +4,7 @@ import sys
 
 if __name__ == '__main__':
     start = 1
-    end = 1000
+    end = 1000000
     from_vertex = 1
     to_vertex = 1
     max_weight = 20
