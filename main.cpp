@@ -50,7 +50,6 @@ uint64_t FordFulkerson(std::vector<std::vector<int> > &graph, uint64_t&& start, 
 
         maxFlow += flow;
     }
-
     return maxFlow;
 }
 
