@@ -4,14 +4,14 @@ import sys
 
 if __name__ == '__main__':
     start = 1
-    end = 1000000
+    end = int(sys.argv[1][4:])
     from_vertex = 1
     to_vertex = 1
     max_weight = 20
 
     with open(sys.argv[1], "w+") as file:
-        file.write(f'{end} {end + 1}\n')
-        for i in range(1, end + 1):
+        file.write(f'{end} {end * end}\n')
+        for i in range(1, end * end):
             from_vertex = randint(start, end)
             to_vertex = randint(start, end)
             w = randint(1, max_weight)

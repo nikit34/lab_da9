@@ -27,13 +27,12 @@ bool BFS(std::vector<std::vector<int> > &graph, uint64_t& start, uint64_t& end, 
     return visited[end];
 }
 
-bool DFS(std::vector<std::vector<int> > &graph, std::vector<int> &parent, std::vector<bool> visited, int x, int t)
-{
+bool DFS(std::vector<std::vector<int> > &graph, std::vector<int> &parent, std::vector<bool>& visited, uint64_t& x, uint64_t& t) {
     if (x == t)
         return true;
     visited[x] = true;
 
-    for (int i = 1; i < graph.size(); ++i) {
+    for (uint64_t i = 1; i < graph.size(); ++i) {
         if (graph[x][i] > 0 && !visited[i]) {
             parent[i] = x;
             if (DFS(graph, parent, visited, i, t))
