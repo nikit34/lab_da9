@@ -27,7 +27,7 @@ bool BFS(std::vector<std::vector<int> > &graph, uint64_t& start, uint64_t& end, 
     return visited[end];
 }
 
-bool DFS(std::vector<std::vector<int> > &graph, std::vector<int> &parent, std::vector<bool>& visited, uint64_t& x, uint64_t& t) {
+bool DFS(std::vector<std::vector<int> > &graph, std::vector<int> &parent, std::vector<bool>& visited, uint64_t x, uint64_t t) {
     if (x == t)
         return true;
     visited[x] = true;
@@ -49,9 +49,9 @@ uint64_t FordFulkerson(std::vector<std::vector<int> > &graph, uint64_t&& start, 
     std::vector<std::vector<int> > resGraph = graph;
     std::vector<int> parent(graph.size());
 
-    std::vector<bool> visited(graph.size());
-    while (DFS(resGraph, parent, visited, start, end)){
-    // while (BFS(resGraph, start, end, parent)) {
+    // std::vector<bool> visited(graph.size());
+    // while (DFS(resGraph, parent, visited, start, end)){
+    while (BFS(resGraph, start, end, parent)) {
         flow = std::numeric_limits<int>::max();
 
         for (v = end; v != start; v = parent[v]) {
